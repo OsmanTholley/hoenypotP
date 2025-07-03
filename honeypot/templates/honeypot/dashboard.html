@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'honeypot/style.css' %}" />
+</head>
+<body>
+<div class="container mt-5 dashboard-container">
+    <h2 class="mb-4">
+        <i class="fas fa-shield-alt me-2"></i>
+        Honeypot Attack Logs
+    </h2>
+
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>IP Address</th>
+            <th>User Agent</th>
+            <th>Timestamp</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for log in logs %}
+            <tr>
+                <td data-label="Username">{{ log.username }}</td>
+                <td data-label="Password">{{ log.password }}</td>
+                <td data-label="IP Address">{{ log.ip_address }}</td>
+                <td data-label="User Agent">{{ log.user_agent }}</td>
+                <td data-label="Timestamp">{{ log.timestamp }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No logs found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Optional: Bootstrap JS Bundle for components (optional for your use) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

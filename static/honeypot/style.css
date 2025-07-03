@@ -1,0 +1,153 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937; /* Dark slate */
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Login form container styling */
+.container > div {
+  /* This targets the inner div wrapping your form */
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+h3 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #2563eb; /* Blue */
+  letter-spacing: 1px;
+}
+
+/* Form label */
+label {
+  font-weight: 600;
+  color: #374151; /* Medium dark slate */
+}
+
+/* Input fields */
+input.form-control {
+  border: 1.8px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 6px #2563ebaa;
+}
+
+/* Submit button */
+button.btn-primary {
+  background-color: #2563eb;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+/* Dashboard Heading */
+.dashboard-container h2 {
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: #374151;
+  text-align: center;
+}
+
+thead tr {
+  background-color: #2563eb;
+  color: white;
+  text-align: center;
+}
+
+thead th, tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  text-align: justify;
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Responsive table for smaller screens */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tbody tr {
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+    background: #fff;
+    padding: 15px;
+  }
+
+  tbody td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 20px;
+    top: 14px;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-align: left;
+  }
+}
